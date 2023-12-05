@@ -8,7 +8,6 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
-                    sudo cd example
                     sudo ls -ltr
                     sudo pwd
                     sudo terraform init
@@ -20,7 +19,6 @@ pipeline {
                 sh'''
                     sudo ls -ltr
                     sudo pwd
-                    sudo cd example
                     sudo terraform plan
                 '''
             }
@@ -37,7 +35,6 @@ pipeline {
                 sh '''
                     sudo pwd
                     sudo ls -ltr
-                    sudo cd example
                     sudo terraform apply -auto-approve
                 '''
             }
