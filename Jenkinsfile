@@ -8,20 +8,20 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
-                    cd example
-                    ls -ltr
-                    pwd
-                    terraform init
+                    sudo cd example
+                    sudo ls -ltr
+                    sudo pwd
+                    sudo terraform init
                 '''
             }
         }
         stage('Plan') {
             steps {
                 sh'''
-                    ls -ltr
-                    pwd
-                    cd example
-                    terraform plan
+                    sudo ls -ltr
+                    sudo pwd
+                    sudo cd example
+                    sudo terraform plan
                 '''
             }
         }
@@ -35,10 +35,10 @@ pipeline {
             steps{
                 
                 sh '''
-                    pwd
-                    ls -ltr
-                    cd example
-                    terraform apply -auto-approve
+                    sudo pwd
+                    sudo ls -ltr
+                    sudo cd example
+                    sudo terraform apply -auto-approve
                 '''
             }
         }
